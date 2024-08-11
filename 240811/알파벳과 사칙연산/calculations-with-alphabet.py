@@ -2,7 +2,7 @@ c = list(input())
 ch = {'a':0, 'b':0, 'c':0, 'd':0, 'e':0, 'f':0}
 cl = ['+', '-', '*']
 #print(c)
-ans = 0
+ans = -1000000
 
 def calc():
     n = ch[c[0]]
