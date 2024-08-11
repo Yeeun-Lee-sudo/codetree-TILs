@@ -6,10 +6,15 @@ bomb_type = [
 ]
 bomblist = []
 
+bomb = []
+
 for i in range(n):
-    ll = list(map(int, input().split()))
-    if 1 in ll:
-        bomblist.append([ll.index(1), i])
+    bomb.append(list(map(int, input().split())))
+
+for i in range(n):
+    for j in range(n):
+        if bomb[i][j] == 1:
+            bomblist.append([i, j])
 
 #print(bomblist)
 
@@ -52,6 +57,7 @@ def count():
             if bombed_m[i][j]:
                 cnt += 1
     
+    #print(cnt)
     return cnt
 
 def search(cnt):
@@ -63,7 +69,7 @@ def search(cnt):
         return
 
     for i in range(1, 4):
-        y, x = bomblist[cnt]
+        x, y = bomblist[cnt]
         bomb_type[x][y] = i
         search(cnt + 1)
         bomb_type[x][y] = 0
