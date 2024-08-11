@@ -54,20 +54,21 @@ def count():
     
     return cnt
 
-def search(bombs):
+def search(cnt):
     #폭탄 놓을 위치를 저장해 둔 배열을 받음
     global ans
 
-    if len(bombs) == 0:
+    if len(bomblist) == cnt:
         ans = max(ans, count())
         return
 
     for i in range(3):
-        for j in bombs:
-            bomb_type[j[1]][j[0]] = i
-            search(bombs[1:])
+        y, x = bomblist[cnt]
+        bomb_type[x][y] = i
+        search(cnt + 1)
+        bomb_type[x][y] = 0
 
     return
 
-search(bomblist)
+search(0)
 print(ans)
