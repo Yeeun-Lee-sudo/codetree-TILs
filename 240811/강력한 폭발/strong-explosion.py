@@ -1,10 +1,14 @@
 n = int(input())
-grid = []
-for i in range(n):
-    grid.append(list(map(int, input().split())))
-
 arr = []
 bomblist = []
+
+for i in range(n):
+    ll = list(map(int, input().split()))
+    if 1 in ll:
+        bomblist.append([ll.index(1), i])
+
+#print(bomblist)
+
 def bomb1(x, y):
     arr.append([x, y])
     arr.append([x, y-1])
@@ -69,11 +73,5 @@ def search(bombs):
             arr.pop()
     return
 
-for i in range(n):
-    for j in range(n):
-        if grid[j][i] == 1:
-            bomblist.append([j, i])
-
-#print(bomblist)
 search(bomblist)
 print(max)
