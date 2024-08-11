@@ -49,19 +49,11 @@ def bomb(x, y, b_type):
         dx, dy = bomb_shapes[b_type][i];
         nx, ny = x + dx, y + dy
         if in_range(nx, ny):
-            arr.append([nx, ny])
-            num += 1
+            if [nx, ny] not in arr:
+                arr.append([nx, ny])
+                num += 1
     return num
     #print(arr)
-
-def count(arr):
-    res = []
-    for i in arr:
-        if i not in res:
-            res.append(i)
-    #print(*res)
-    #print(len(res))
-    return len(res)
 
 max = 0
 
@@ -70,7 +62,7 @@ def search(bombs):
     global max
 
     if len(bombs) == 0:
-        a = count(arr)
+        a = len(arr)
         if a >= max:
             max = a
             #print(max)
