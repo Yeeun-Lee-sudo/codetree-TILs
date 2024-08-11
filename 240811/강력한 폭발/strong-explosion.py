@@ -62,7 +62,7 @@ def search(cnt):
         ans = max(ans, count())
         return
 
-    for i in range(3):
+    for i in range(1, 4):
         y, x = bomblist[cnt]
         bomb_type[x][y] = i
         search(cnt + 1)
