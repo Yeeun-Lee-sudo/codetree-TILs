@@ -63,10 +63,10 @@ def search(cnt):
         return
 
     for i in range(1, 4):
-        y, x = bomblist[cnt]
-        bomb_type[x][y] = i
+        x, y = bomblist[cnt]
+        bomb_type[y][x] = i
         search(cnt + 1)
-        bomb_type[x][y] = 0
+        bomb_type[y][x] = 0
 
     return
 
