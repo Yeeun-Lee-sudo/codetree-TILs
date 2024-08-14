@@ -19,7 +19,7 @@ def choose(cnt):
             continue
         
         pos[j] += move[cnt]
-        if pos[j] == m:
+        if pos[j] >= m:
             sco.append(1)
             #print(*pos)
         else:
