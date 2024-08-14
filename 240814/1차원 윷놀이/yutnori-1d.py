@@ -15,7 +15,7 @@ def choose(cnt):
         return
     
     for j in range(k):
-        if pos[j] >= m:
+        if pos[j] > m:
             continue
         
         pos[j] += move[cnt]
