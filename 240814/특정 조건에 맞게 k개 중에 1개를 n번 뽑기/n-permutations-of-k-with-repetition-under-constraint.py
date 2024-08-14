@@ -24,5 +24,6 @@ def choose(cnt):
             bf = i
             choose(cnt+1)
             ans.pop()
+    return
 
 choose(0)
