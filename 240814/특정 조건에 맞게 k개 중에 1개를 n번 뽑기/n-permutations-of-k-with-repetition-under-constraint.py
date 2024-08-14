@@ -22,6 +22,7 @@ def choose(cnt):
         else:
             ans.append(i)
             bf = i
+            tf = 0
             choose(cnt+1)
             ans.pop()
     return
