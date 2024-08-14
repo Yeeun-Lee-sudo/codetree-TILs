@@ -1,7 +1,5 @@
 k, n = map(int, input().split())
 ans = []
-tf = 0
-bf = 0
 
 def choose(cnt): 
     global tf
@@ -12,19 +10,13 @@ def choose(cnt):
         return
     
     for i in range(1, k+1):
-        if bf == i:
-            if tf == 1:
+        if len(ans) >= 2:
+            if ans[-1] == ans[-2] == i:
+                #print("aaa")
                 continue
-            ans.append(i)
-            tf = 1
-            choose(cnt+1)
-            ans.pop()
-        else:
-            ans.append(i)
-            bf = i
-            tf = 0
-            choose(cnt+1)
-            ans.pop()
+        ans.append(i)
+        choose(cnt+1)
+        ans.pop()
     return
 
 choose(0)
