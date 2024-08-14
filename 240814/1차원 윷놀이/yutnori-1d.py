@@ -10,12 +10,12 @@ def choose(cnt):
     global sco
     if cnt == len(move):
         #print(*pos)
-        #print(*grid)
         ans = max(ans, sum(sco))
         return
     
     for j in range(k):
-        if pos[j] > m:
+        if pos[j] >= m:
+            choose(cnt+1)
             continue
         
         pos[j] += move[cnt]
