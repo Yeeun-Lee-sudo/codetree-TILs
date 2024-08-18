@@ -17,5 +17,6 @@ def choose(cnt):
         l.pop()
     return
 
-choose(1)
+if m != 1:
+    choose(1)
 print(ans)
