@@ -1,4 +1,5 @@
 n, m = map(int, input().split())
+r = list(map(int, input().split()))
 l = []
 ans = 0
 
@@ -11,12 +12,12 @@ def choose(cnt):
         ans = max(ans, calc)
         return
     
-    for i in range(cnt, n+1):
-        l.append(i)
+    for i in range(cnt, n):
+        l.append(r[i])
         choose(i+1)
         l.pop()
     return
 
-if not m == n == 1:
-    choose(1)
+
+choose(0)
 print(ans)
