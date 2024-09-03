@@ -12,20 +12,23 @@ def isLeapyear(y):
 
 def dayExist(y, m, d):
     if m in days31:
-        if d > 31:
-            return False
+        return True
     elif m in days30:
-        if d > 30:
+        if d == 31:
             return False
+        else:
+            return True
     else: 
         if isLeapyear:
             if d > 29:
                 return False
+            else:
+                return True
         else:
             if d > 28:
                 return False
-    
-    return True
+            else:
+                return True
 
 if dayExist(y, m, d):
     if m == 3 or m == 4 or m == 5:
