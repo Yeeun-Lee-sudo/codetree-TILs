@@ -1,3 +1,4 @@
+import sys
 def plus(num1, num2):
     return num1 + num2
 
@@ -14,14 +15,17 @@ a, o, c = input().split()
 a = int(a)
 c = int(c)
 
-print("%d %c %d = " %(a, o, c), end="")
+
 if o == "+":
-    print(plus(a, c))
+    ans = plus(a, c)
 elif o == "-":
-    print(minus(a, c))
+    ans = minus(a, c)
 elif o == "*":
-    print(multiply(a, c))
+    ans = multiply(a, c)
 elif o == "/":
-    print(divide(a, c))
+    ans = divide(a, c)
 else:
     print("False")
+    exit()
+
+print("%d %c %d = %d" %(a, o, c, ans), end="")
