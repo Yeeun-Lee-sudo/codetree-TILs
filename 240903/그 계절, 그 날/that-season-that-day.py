@@ -3,8 +3,8 @@ days31 = [1, 3, 5, 7, 8, 10, 12]
 days30 = [4, 6, 9, 11]
 
 def isLeapyear(y):
-    if year % 4 == 0:
-        if year % 100 == 0 and year % 400 != 0:
+    if y % 4 == 0:
+        if y % 100 == 0 and y % 400 != 0:
             return False
         else:
             return True
@@ -19,7 +19,7 @@ def dayExist(y, m, d):
         else:
             return True
     else: 
-        if isLeapyear:
+        if isLeapyear(y):
             if d > 29:
                 return False
             else:
