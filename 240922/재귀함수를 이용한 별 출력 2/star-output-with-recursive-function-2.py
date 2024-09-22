@@ -15,4 +15,4 @@ def star(num, cnt):
     
     star(num, cnt)
 
-star(5, 1)
+star(n, 1)
