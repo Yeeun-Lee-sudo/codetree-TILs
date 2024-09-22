@@ -2,7 +2,7 @@ n = int(input())
 nums = list(map(int, input().split()))
 
 def max(m, n):
-    if n == 0:
+    if n == -1:
         return m 
     if m > nums[n]:
         return max(m, n-1)
