@@ -21,4 +21,4 @@ for i in range(1, n):
     if p_l[slow].name < p_l[i].name:
         slow = i
 
-p_l[i].printall()
+p_l[slow].printall()
