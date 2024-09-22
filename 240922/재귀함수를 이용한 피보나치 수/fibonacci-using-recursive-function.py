@@ -1,9 +1,11 @@
 n = int(input())
 
-def nums(n1, n2, cnt):
-    if cnt == n - 1:
-        return n1 + n2
-    else:
-        return nums(n2, n1+n2, cnt+1)
+def f(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 1
+    
+    return f(n-2) + f(n-1)
 
-print(nums(1, 1, 2))
+print(f(n))
