@@ -3,7 +3,7 @@ a, b, c, d = map(int, input().split())
 
 def days(m, d):
     ans = 0
-    for i in range(m+1):
+    for i in range(m):
         ans += num_of_days[i]
 
     return ans + d
