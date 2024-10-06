@@ -8,4 +8,7 @@ def days(m, d):
 
     return ans + d
 
-print(days(c, d) - days(a, b))
+ans = days(c, d) - days(a, b)
+if ans = 0:
+    ans = 1
+print(ans)
